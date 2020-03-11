@@ -1,0 +1,21 @@
+#total=15
+#ar=[2,3,7,8]
+total=int(input())
+ar=list(map(int,input().split()))
+start=0
+end=0
+cursum=0
+mapper=dict()
+for i in range(0,len(ar)):
+    sum=ar[i]
+    cursum=cursum+sum
+    if(cursum==total):
+        start=0
+        end=i
+        break
+    mapper[cursum]=i        
+    if((cursum-total>0)):
+        if(mapper[cursum-total]):
+            start=mapper[cursum-sum]
+            end=i
+print(start,end)
