@@ -1,0 +1,19 @@
+public class Solution {
+    public int coverPoints(int[] a, int[] b) 
+    {
+        int count=0;
+        int x1=a[0];
+        int y1=b[0];
+        int n=a.length;
+        for(int i=1;i<n;i++)
+        {
+            int x2=a[i];
+            int y2=b[i];
+            int res=Math.max(Math.abs(x2-x1),Math.abs(y2-y1));
+            count=count+res;
+            x1=x2;
+            y1=y2;
+        }
+        return count;
+    }
+}
