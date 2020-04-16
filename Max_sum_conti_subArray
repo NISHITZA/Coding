@@ -1,0 +1,13 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int maxSubArray(final int[] A) {
+        int max_local=A[0];
+        int max_global=A[0];
+        for(int i=1;i<A.length;i++)
+        {
+            max_local=Math.max(A[i],A[i]+max_local);
+            max_global=Math.max(max_local,max_global);
+        }
+        return max_global;
+    }
+}
