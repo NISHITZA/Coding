@@ -1,0 +1,31 @@
+public class Solution {
+    public String[] fizzBuzz(int a) 
+    {
+        String str[]=new String[a];
+        int k=0;
+        for(int i=1;i<=a;i++)
+        {
+            if(i%15==0)
+            {
+                str[k]="FizzBuzz";
+                k++;
+                continue;
+            }
+            if(i%3==0)
+            {
+                str[k]="Fizz";
+                k++;
+                continue;
+            }
+            if(i%5==0)
+            {
+                str[k]="Buzz";
+                k++;
+                continue;
+            }
+            str[k]=Integer.toString(i);
+            k++;
+        }
+        return str;
+    }
+}
